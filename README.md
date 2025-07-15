@@ -65,7 +65,7 @@ Ideal for:
 sqs-message-processor-api
 │
 ├── src/main/kotlin
-│   └── com.ricardoproenca.sqsmessageprocessorapi
+│   └── br.com.rpdesenvolve.sqs_message_processor_api
 │       ├── config              # AWS SQS configuration
 │       ├── entrypoint          # Controllers and DTOs
 │       ├── usecase             # Business use cases
@@ -110,7 +110,7 @@ mvn spring-boot:run
 ```bash
 curl -X POST http://localhost:8080/api/v1/messages \
   -H "Content-Type: application/json" \
-  -d '{"payload": "This is a test message sent to the SQS queue."}'
+  -d '{"payload": "This is a test message sent to the SQS queue through the MessageController."}'
 ```
 
 ---
