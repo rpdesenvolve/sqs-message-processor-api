@@ -1,0 +1,35 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: sqs-message-processor-api
+
+cloud:
+  aws:
+    region:
+      static: ${AWS_REGION}
+
+aws:
+  region: ${AWS_REGION:us-east-1}
+  accessKeyId: ${AWS_ACCESS_KEY_ID:AWS_ACCESS_KEY_ID}
+  secretAccessKey: ${AWS_SECRET_ACCESS_KEY:AWS_SECRET_ACCESS_KEY}
+  sqs:
+    queue:
+      name: ${QUEUE_NAME}
+    queue-url: ${QUEUE_URL:QUEUE_URL}
+
+logging:
+  level:
+    root: INFO
+    br.com.rpdesenvolve.sqs-message-processor-api: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  metrics:
+    export:
+      prometheus:
+        enabled: true
